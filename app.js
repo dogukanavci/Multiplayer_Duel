@@ -93,12 +93,12 @@ app.post('/', function (req, res) {
 })
 
 app.get('/game*', function (req, res) {
-  //if (typeof(currentUser) == undefined || currentUser == null) {
-    //res.render('index.ejs',{signupmsg:null, loginmsg:"Please login first"});
-  //}
-  //else{
+  if (typeof(currentUser) == undefined || currentUser == null) {
+    res.render('index.ejs',{signupmsg:null, loginmsg:"Please login first"});
+  }
+  else{
     res.render('game.ejs',{user:currentUser,score: score});
-  //}
+  }
 });
 
 io.on('connection', function (socket) {
