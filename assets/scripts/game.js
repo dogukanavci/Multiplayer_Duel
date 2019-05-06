@@ -143,6 +143,8 @@ addMap2(self);
     });
   });
   this.socket.on('shoot', function (playerInfo) {
+    console.log("shooting at " + playerInfo.map);
+    console.log(self.character.map);
     if (playerInfo.map == self.character.map) {
       shoot(self,playerInfo);
     }

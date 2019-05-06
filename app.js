@@ -21,7 +21,6 @@ function addUser(username,pass){
   });
 }
 function updateScore(usr,sc){
-  console.log(usr.trim() + " with score "+sc);
   db.ref("Users/"+ usr.trim()).update({ score: sc });
 }
 var ejs = require('ejs');
